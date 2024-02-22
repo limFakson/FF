@@ -95,11 +95,11 @@ DATABASES = {
     }
 }
 
-# import mongo_connection file
-from .mongo_connection import mongo_connection
+# # import mongo_connection file
+# from .mongo_connection import mongo_connection
 
-# Call the function to establish the MongoDB connection
-MONGODB_CLIENT = mongo_connection()
+# # Call the function to establish the MongoDB connection
+# MONGODB_CLIENT = mongo_connection()
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -152,3 +152,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "/home"
 
 LOGOUT_REDIRECT_URL = "/login"
+
+REGISTER_REDIRECT_URL = "/home"
