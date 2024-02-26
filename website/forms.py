@@ -14,7 +14,7 @@ SCHOOL_CHOICES = [
 
 class Registerform(UserCreationForm):
     email = forms.EmailField(required=True)
-    school = forms.ChoiceField(choices=SCHOOL_CHOICES, label="choose a school", required=True, widget=forms.Select(attrs={'class': 'form-control'}))
+    school = forms.ChoiceField(choices=SCHOOL_CHOICES, label="Your school", required=True, widget=forms.Select(attrs={'class': 'form-control'}))
     username = forms.CharField(max_length=100)
 
     class Meta:

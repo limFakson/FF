@@ -1,11 +1,22 @@
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    {% tailwind_css %}
 </head>
 <body>
+    <!-- Forum header displaying only account icon and login/signup redirect link-->
+    <!-- <header class="p-8">
+        <nav>
+            <div class="sitelogo">
+                <p class="to-slate-950 text-xl">Federal University Of Technology,Akure</p>
+            </div>
+            
+        </nav>
+    </header> -->
     {% block content %}
     {% endblock %}
 </body>
