@@ -2,9 +2,15 @@
 {% block title %} Sign up {% endblock %}
 {% load crispy_forms_tags %}
 {% block content %}
-<form method="POST">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit">Register</button>
-</form>
+<div class="bg">
+    <div class="grid p-8">
+        <div class="justify-self-center self-center container w-[21rem]">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="bg-black">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

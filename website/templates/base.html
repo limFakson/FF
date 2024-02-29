@@ -1,22 +1,25 @@
 {% load static tailwind_tags %}
+{% load tailwind_filters %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     {% tailwind_css %}
 </head>
 <body>
     <!-- Forum header displaying only account icon and login/signup redirect link-->
-    <!-- <header class="p-8">
+    <header class="p-8">
+        <div class="sitelogo">
+            <img src="" alt="">
+            <p class="to-slate-950 text-xl">Federal University Of Technology,Akure</p>
+        </div>
         <nav>
-            <div class="sitelogo">
-                <p class="to-slate-950 text-xl">Federal University Of Technology,Akure</p>
-            </div>
             
         </nav>
-    </header> -->
+    </header>
     {% block content %}
     {% endblock %}
 </body>

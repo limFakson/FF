@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website',
     'crispy_forms',
-    'crispy_bootstrap5',
+    "crispy_tailwind",
     'tailwind',
     'theme',
     'django_browser_reload',
@@ -160,14 +160,17 @@ USE_TZ = True
 
 TAILWIND_APP_NAME = 'theme'
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'tailwind'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'tailwind'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'theme/static/'
+
+MEDIA_URL = '/theme/static/'
+MEDIA_ROOT = BASE_DIR / "theme/static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
