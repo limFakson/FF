@@ -8,20 +8,20 @@
     <title>{% block title %}{% endblock %}</title>
     {% tailwind_css %}
 </head>
-<body>
+<body class="bg-pri">
     <!-- Forum header displaying only account icon and login/signup redirect link-->
-    <header class="px-8 py-4 flex justify-between">
+    <header class="px-10 py-4 flex justify-between">
         <div class="sitelogo">
             <p class="to-slate-950 text-xl">FF</p>
         </div>
         <nav class="flex">
             {% if user.is_authenticated %}
-            <ul class="block">
-                <li class="inline-block text-lg">School News</li>
+            <ul class="pr-4">
+                <li class="inline-block text-lg px-2">School News</li>
                 <li class="inline-block text-lg">Events</li>
             </ul>
-            <div class="user">
-                <span class="acct">
+            <div class="user px-4">
+                <span class="acct text-xl">
                     {{ user.username }}
                 </span>
                 {% else %}

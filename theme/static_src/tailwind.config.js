@@ -44,7 +44,8 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                pri
+                'pri': '#f2f2f2',
+                'sec': '#2d2d2d'
             }
         },
     },
