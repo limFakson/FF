@@ -6,18 +6,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     {% tailwind_css %}
 </head>
 <body>
     <!-- Forum header displaying only account icon and login/signup redirect link-->
-    <header class="p-8">
+    <header class="px-8 py-4 flex justify-between">
         <div class="sitelogo">
-            <img src="" alt="">
-            <p class="to-slate-950 text-xl">Federal University Of Technology,Akure</p>
+            <p class="to-slate-950 text-xl">FF</p>
         </div>
-        <nav>
-            
+        <nav class="flex">
+            {% if user.is_authenticated %}
+            <ul class="block">
+                <li class="inline-block text-lg">School News</li>
+                <li class="inline-block text-lg">Events</li>
+            </ul>
+            <div class="user">
+                <span class="acct">
+                    {{ user.username }}
+                </span>
+                {% else %}
+                <span class="reg">
+                    <a href="/login">Login</a>
+                </span>
+                {% endif %}
+            </div>
         </nav>
     </header>
     {% block content %}

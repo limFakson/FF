@@ -169,8 +169,9 @@ CRISPY_TEMPLATE_PACK = 'tailwind'
 
 STATIC_URL = 'theme/static/'
 
-MEDIA_URL = '/theme/static/'
-MEDIA_ROOT = BASE_DIR / "theme/static"
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+MEDIA_URL = 'website/files/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "website/files")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -182,4 +183,4 @@ LOGIN_REDIRECT_URL = "/home"
 
 LOGOUT_REDIRECT_URL = "/login"
 
-REGISTER_REDIRECT_URL = "/home"
+REGISTER_REDIRECT_URL = "/login"
