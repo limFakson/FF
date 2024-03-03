@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+from .models import Post
 
 SCHOOL_CHOICES = [
     ('SEET', 'School of Engineering & Engineering Technology'),
@@ -17,8 +18,13 @@ class Registerform(UserCreationForm):
     email = forms.EmailField(required=True)
     school = forms.ChoiceField(choices=SCHOOL_CHOICES, label="Your school", required=True, widget=forms.Select(attrs={'class': 'form-control'}))
     username = forms.CharField(max_length=100)
-    fullname = forms.CharField(max_length=190)
+    fullname = forms.CharField(max_length=190, required=True)
 
     class Meta:
         model = User
         fields = ["fullname", "username", "email", "school"]
+
+class Postform(forms.ModelForms):
+    class Meta:
+        model = Post
+        fields = ["description", "media"]
