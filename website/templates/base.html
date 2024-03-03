@@ -7,20 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     {% tailwind_css %}
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
 </head>
 <body class="bg-pri">
     <!-- Forum header displaying only account icon and login/signup redirect link-->
-    <header class="px-10 py-4 flex justify-between">
+    <header class="p-4 flex justify-between bg-[#fff] ">
         <div class="sitelogo">
             <p class="to-slate-950 text-xl">FF</p>
         </div>
         <nav class="flex">
             {% if user.is_authenticated %}
-            <ul class="pr-4">
+            <ul class="pr-2">
                 <li class="inline-block text-lg px-2">School News</li>
                 <li class="inline-block text-lg">Events</li>
             </ul>
-            <div class="user px-4">
+            <div class="user">
                 <span class="acct text-xl">
                     {{ user.username }}
                 </span>
@@ -34,5 +35,7 @@
     </header>
     {% block content %}
     {% endblock %}
+
+    <script src="{% static 'script/scripts.js' %}"></script>
 </body>
 </html>
