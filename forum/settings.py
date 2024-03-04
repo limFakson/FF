@@ -168,10 +168,11 @@ CRISPY_TEMPLATE_PACK = 'tailwind'
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'theme/static/'
+STATIC_ROOT = BASE_DIR / 'theme/static'
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-MEDIA_URL = 'website/files/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "website/files")
+MEDIA_URL = 'static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "static")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

@@ -1,5 +1,4 @@
-{% load static tailwind_tags %}
-{% load tailwind_filters %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,11 +15,17 @@
         <div class="sitelogo">
             <p class="to-slate-950 text-xl">FF</p>
         </div>
+        <div class="openmenu cursor-pointer">
+            <i class="fa-solid fa-bars"></i>
+        </div>
         <nav class="flex">
+            <div class="closemenu cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
             {% if user.is_authenticated %}
             <ul class="pr-2">
-                <li class="inline-block text-lg px-2">School News</li>
-                <li class="inline-block text-lg">Events</li>
+                <li class="inline-block text-lg px-2"><a href="">School News</a></li>
+                <li class="inline-block text-lg"><a href="">Events</a></li>
             </ul>
             <div class="user">
                 <span class="acct text-xl">
