@@ -1,6 +1,8 @@
+{% load static tailwind_tags %}
+{% load tailwind_filters %}
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,36 +10,48 @@
     {% tailwind_css %}
     <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
     <script src="https://kit.fontawesome.com/43b5f69107.js" crossorigin="anonymous"></script>
+    <style>
+        .head{
+            border-bottom: 1px #000000 solid;
+            drop-
+        }
+        .profile{
+            background-color: #f2f2f2;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body class="bg-pri">
     <!-- Forum header displaying only account icon and login/signup redirect link-->
-    <header class="p-4 flex justify-between bg-[#fff] ">
-        <div class="sitelogo">
-            <p class="to-slate-950 text-xl">FF</p>
-        </div>
-        <div class="openmenu cursor-pointer">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <nav class="flex">
-            <div class="closemenu cursor-pointer">
-                <i class="fa-solid fa-xmark"></i>
+    <header class="grid bg-[#fff] ">
+        <div class="head flex justify-between px-6 p-3 items-center">
+            <div class="sitelogo flex justify-center items-center gap-1">
+                <div class="img ">
+                    <!-- <img src="{% static 'image/FUTA-logo.png' %}" alt="" class="w-[2.5rem] h-auto"> -->
+                </div>
+                <p class="to-slate-950 text-xl">FF</p>
             </div>
             {% if user.is_authenticated %}
-            <ul class="pr-2">
-                <li class="inline-block text-lg px-2"><a href="">School News</a></li>
-                <li class="inline-block text-lg"><a href="">Events</a></li>
-            </ul>
-            <div class="user">
-                <span class="acct text-xl">
-                    {{ user.username }}
-                </span>
-                {% else %}
-                <span class="reg">
-                    <a href="/login">Login</a>
-                </span>
-                {% endif %}
+            <div class="profile cursor-pointer w-[40px] flex justify-center items-center">
+                <i class="fa-solid fa-user text-[25px] "></i>
+                <div class="user">
+                    <span class="acct text-xl">
+                        {{ user.username }}
+                    </span>
+                </div>
             </div>
+            {% else %}
+                <a href="/login">Login</a>
+            {% endif %}
+        </div>
+    
+        <nav class="grid bg-[#000]">
+            <ul class="justify-self-center text-white">
+                <li class="inline-block text-base font-normal py-1 px-2 cursor-pointer"><a href="">School News</a></li>
+                <li class="inline-block text-base font-normal py-1 px-2 cursor-pointer"><a href="">Events</a></li>
+            </ul>
         </nav>
+
     </header>
     {% block content %}
     {% endblock %}
