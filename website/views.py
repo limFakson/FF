@@ -10,7 +10,7 @@ def home(request):
     posts = Post.objects.all()
     return render(request, 'main/home.html')
 
-@login_required
+@login_required(login_url="/login")
 def post(request):
     form = Postform() # Initialize form at the beginning
     if request.method == 'POST':
@@ -40,6 +40,6 @@ def register(request):
 
     return render(request, 'registration/register.html', {'form': form})
 
-def logout(request):
+def logout_view(request):
     logout(request)
     return redirect('/home')
