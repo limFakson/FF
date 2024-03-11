@@ -18,6 +18,7 @@ def post(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
+            print(post.author)
             post.save()
             return redirect('/home')
     return render(request, 'main/post.html', {'form': form})
