@@ -28,7 +28,7 @@ SECRET_KEY = config("STATUS_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 #Database url to connect to
 DATABASEE_URL = config("DATABASE_URL")
@@ -43,23 +43,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
-    'crispy_forms',
-    "crispy_tailwind",
     'tailwind',
     'theme',
-    'django_browser_reload',
-    
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'website.middleware.TenantMiddleware',
+    'website.middleware.MultiTenantRouteMiddleware',
 ]
 
 ROOT_URLCONF = 'forum.urls'
@@ -67,7 +64,7 @@ ROOT_URLCONF = 'forum.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'theme/template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
