@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap');
+
+* {
+    font-family: Inter;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: #FEF6EE;
+    background-size: cover;
+}
+
+span {
+    display: block;
+}
+
+.drop-shadow {
+    /* border: 1px solid #000; */
+    border-radius: 13px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+}
+
+.circle span {
+    position: absolute;
+}
+
+.small {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+
+}
+
+.large {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+}
+
+.orange {
+    background-color: #FF9800;
+    top: 4.5rem;
+    right: 24rem;
+}
+
+.blue {
+    background-color: #2196F3;
+    bottom: 3rem;
+    left: 28rem;
+}
+
+.green {
+    background-color: #4CAF50;
+    top: -5rem;
+    left: -5rem;
+}
+
+.red {
+    background-color: #F44336;
+    bottom: 0rem;
+    right: -6rem;
+}
+
+.box {
+    border-radius: 10px;
+    width: 3.4rem;
+    height: 2.8rem;
+    background-color: #E6EAF3;
+}
+
+.txt {
+    margin: 1rem 0;
+}
+
+input {
+    background-color: transparent;
+    outline: none;
+}
+
+.a {
+    text-decoration: underline;
+}
+
+.custom {
+    margin: 8px 5px;
+    width: 23rem;
+    height: 3rem;
+    border-radius: 10px;
+}
+
+.input {
+    background-color: #FEF6EE;
+    color: #2B2D40;
+    font-weight: 400;
+    font-size: 18px;
+    outline: 1px solid rgba(43, 45, 64, 0.5);
+}
+
+.input:focus {
+    outline: 1.1px solid rgba(43, 45, 64, 0.8);
+}
+
+.input::-moz-placeholder {
+    color: #FF9800;
+    font-weight: 400;
+    opacity: 1%;
+}
+
+.submit {
+    color: #FEF6EE;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.eye {
+    transition: ease-in-out .2s;
+}
+
+.trigger-hide:checked+.hide {
+    display: none !important;
+}
+
+.trigger-reveal:checked~.reveal {
+    display: none !important;
+}
+
+.obutton {
+    border: #2B2D40 1px solid;
+    border-radius: 8px;
+    width: 6rem;
+    height: 3.4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.obutton img {
+    max-width: 5.5rem;
+}
+
+.alert {
+    transition: linear .2s;
+    transition: ease-in-out .3s;
+}
+
+.morpheme {
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
